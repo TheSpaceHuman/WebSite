@@ -1,3 +1,4 @@
-import {text} from "./text";
 
-text();
+console.log('Test');
+
+document.body.innerHTML = `<span>Hello world!</span>`
