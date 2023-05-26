@@ -74,6 +74,7 @@ export function buildConfig(options: IBuildOptions): webpack.Configuration {
 export function buildDevServer(options: IBuildOptions): Configuration {
     return {
         port: options.port,
-        open: true
+        open: true,
+        historyApiFallback: true,
     }
 }
