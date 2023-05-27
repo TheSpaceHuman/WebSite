@@ -1,0 +1,15 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 48px;
+  background-color: var(--primary-color);
+  box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+  padding: 0 8px;
+
+  &__menu {
+    display: flex;
+    gap: 8px;
+  }
+}

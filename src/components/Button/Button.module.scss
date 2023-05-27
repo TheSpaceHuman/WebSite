@@ -1,6 +1,12 @@
 .button {
   border-radius: 0;
-  background-color: aqua;
-  color: darkgray;
-  font-size: 16px;
+  background-color: transparent;
+  color: var(--primary-font-color);
+  font-size: 1rem;
+  padding: 4px;
+  border: 1px solid;
+
+  &:hover {
+    box-shadow: 6px 6px 12px -1px rgba(34, 60, 80, 0.2);
+  }
 }

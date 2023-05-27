@@ -1,0 +1,24 @@
+@import "reset";
+@import "fonts";
+@import "variables";
+@import "themes/light";
+@import "themes/dark";
+
+html {
+  font-size: var(--font-size-base, 16px);
+  font-family: var(--font-family,  sans-serif);
+}
+
+.app {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-font-color);
+  min-height: 100vh;
+}
+
+[role='button'], [role='link'] {
+  cursor: pointer;
+}
+
+a {
+  color: var(--primary-font-color);
+}
