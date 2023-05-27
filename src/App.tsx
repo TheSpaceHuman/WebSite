@@ -1,6 +1,6 @@
 import React, {Suspense} from 'react';
 import './styles/index.scss';
-import {Link, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import {HomePageLazy} from "./pages/HomePage/HomePage.lazy";
 import {AboutPageLazy} from "./pages/AboutPage/AboutPage.lazy";
 import cn from 'classnames';
