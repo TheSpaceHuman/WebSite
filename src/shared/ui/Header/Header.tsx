@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 import style from './Header.module.scss';
-import Button from "../Button/Button";
-import {useTheme} from "../../theme/useTheme";
+import {useTheme} from "app/providers/ThemeProvider";
 import {Link} from "react-router-dom";
+import {Button} from "shared/ui";
 
 const Header: FC = () => {
     const {theme, toggleTheme} = useTheme();

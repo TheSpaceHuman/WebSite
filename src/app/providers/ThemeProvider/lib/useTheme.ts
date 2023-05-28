@@ -1,11 +1,6 @@
 import {useContext} from "react";
-import {LOCAL_STORAGE_THEME_KEY, ThemeContext} from "./ThemeContext";
-import {ETheme} from "./theme.types";
-
-export interface IUseThemeResult {
-    toggleTheme: () => void;
-    theme: ETheme;
-}
+import {LOCAL_STORAGE_THEME_KEY, ThemeContext} from "../lib/ThemeContext";
+import {ETheme, IUseThemeResult} from "../types/theme.interface";
 
 export function useTheme(): IUseThemeResult {
     const {theme, setTheme} = useContext(ThemeContext);

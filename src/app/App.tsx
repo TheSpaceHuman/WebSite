@@ -1,11 +1,11 @@
 import React, {Suspense} from 'react';
 import './styles/index.scss';
 import {Route, Routes} from "react-router-dom";
-import {HomePageLazy} from "./pages/HomePage/HomePage.lazy";
-import {AboutPageLazy} from "./pages/AboutPage/AboutPage.lazy";
 import cn from 'classnames';
-import Header from "./components/Header/Header";
-import {useTheme} from "./theme/useTheme";
+import {useTheme} from "app/providers/ThemeProvider";
+import {HomePage} from "pages/HomePage";
+import {AboutPage} from "pages/AboutPage";
+import {Header} from "shared/ui";
 
 const App = () => {
     const {theme} = useTheme();
@@ -14,8 +14,8 @@ const App = () => {
             <Header/>
             <Suspense fallback={'Loading...'}>
                 <Routes>
-                    <Route path={'/'} element={<HomePageLazy/>}></Route>
-                    <Route path={'/about'} element={<AboutPageLazy/>}></Route>
+                    <Route path={'/'} element={<HomePage/>}></Route>
+                    <Route path={'/about'} element={<AboutPage/>}></Route>
                 </Routes>
             </Suspense>
 
