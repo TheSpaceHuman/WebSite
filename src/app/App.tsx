@@ -1,26 +1,18 @@
-import React, {Suspense} from 'react';
+import React from 'react';
 import './styles/index.scss';
-import {Route, Routes} from "react-router-dom";
 import cn from 'classnames';
-import {useTheme} from "app/providers/ThemeProvider";
-import {HomePage} from "pages/HomePage";
-import {AboutPage} from "pages/AboutPage";
-import {Header} from "shared/ui";
+import { useTheme } from "app/providers/ThemeProvider";
+import { Header } from "shared/ui";
+import AppRouter from "app/providers/router/ui/AppRouter";
 
 const App = () => {
-    const {theme} = useTheme();
-    return (
-        <div className={cn('app', `theme--${theme}`)}>
-            <Header/>
-            <Suspense fallback={'Loading...'}>
-                <Routes>
-                    <Route path={'/'} element={<HomePage/>}></Route>
-                    <Route path={'/about'} element={<AboutPage/>}></Route>
-                </Routes>
-            </Suspense>
-
-        </div>
-    );
+	const {theme} = useTheme();
+	return (
+		<div className={cn('app', `theme--${theme}`)}>
+			<Header />
+			<AppRouter />
+		</div>
+	);
 };
 
 export default App;
