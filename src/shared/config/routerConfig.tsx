@@ -1,6 +1,6 @@
-import { RouteProps } from "react-router-dom";
-import { HomePage } from "pages/HomePage";
-import { AboutPage } from "pages/AboutPage";
+import { RouteProps } from 'react-router-dom';
+import { HomePage } from 'pages/HomePage';
+import { AboutPage } from 'pages/AboutPage';
 
 export enum EPages {
 	HOME = 'home',
@@ -16,4 +16,4 @@ export const routerConfig: Record<EPages, RouteProps> = {
 		path: '/about',
 		element: <AboutPage />
 	}
-}
+};

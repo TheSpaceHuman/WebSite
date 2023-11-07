@@ -1,9 +1,9 @@
 import React from 'react';
 import './styles/index.scss';
 import cn from 'classnames';
-import { useTheme } from "app/providers/ThemeProvider";
-import { Header } from "shared/ui";
-import AppRouter from "app/providers/router/ui/AppRouter";
+import { useTheme } from 'app/providers/ThemeProvider';
+import { Header } from 'widgets';
+import { AppRouter } from 'app/providers/router';
 
 const App = () => {
 	const {theme} = useTheme();

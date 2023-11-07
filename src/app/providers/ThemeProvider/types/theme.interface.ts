@@ -1,14 +1,14 @@
 export enum ETheme {
-    LIGHT = 'light',
-    DARK = 'dark',
+	LIGHT = 'light',
+	DARK = 'dark',
 }
 
 export interface IThemeContextProps {
-    theme?: ETheme;
-    setTheme?: (theme: ETheme) => void
+	theme?: ETheme;
+	setTheme?: (theme: ETheme) => void
 }
 
 export interface IUseThemeResult {
-    toggleTheme: () => void;
-    theme: ETheme;
+	toggleTheme: () => void;
+	theme: ETheme;
 }

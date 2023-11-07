@@ -1,5 +1,5 @@
-import {createContext} from "react";
-import {IThemeContextProps} from "../types/theme.interface";
+import { createContext } from "react";
+import { IThemeContextProps } from "../types/theme.interface";
 
 
 export const ThemeContext = createContext<IThemeContextProps>({});
