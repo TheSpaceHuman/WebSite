@@ -2,18 +2,20 @@ import { RouteProps } from 'react-router-dom';
 import { HomePage } from 'pages/HomePage';
 import { AboutPage } from 'pages/AboutPage';
 
-export enum EPages {
-	HOME = 'home',
-	ABOUT = 'about'
+export type TPage = RouteProps & {
+	name: string;
+	path: string;
 }
 
-export const routerConfig: Record<EPages, RouteProps> = {
-	[EPages.HOME]: {
+export const routes: Array<TPage> = [
+	{
+		name: 'Home',
 		path: '/',
 		element: <HomePage />
 	},
-	[EPages.ABOUT]: {
+	{
+		name: 'About',
 		path: '/about',
 		element: <AboutPage />
 	}
-};
+];

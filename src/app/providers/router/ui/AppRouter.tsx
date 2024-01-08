@@ -1,13 +1,13 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { routerConfig } from 'shared/config/routerConfig';
+import { routes } from 'app/providers/router';
 
 const AppRouter = () => {
 	return (
-		<Suspense fallback={'Loading...'}>
+		<Suspense fallback={'Loading page...'}>
 			<Routes>
 				{
-					Object.values(routerConfig).map(
+					routes.map(
 						({element, path}) => <Route key={path} path={path} element={element}></Route>
 					)
 				}
