@@ -1,7 +1,7 @@
 {
-  "name": "react-playground",
+  "name": "website",
   "version": "0.0.1",
-  "description": "react sandbox",
+  "description": "Personal website",
   "main": "src/index.ts",
   "scripts": {
     "start": "webpack serve",
