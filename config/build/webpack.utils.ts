@@ -6,29 +6,49 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 
 export function buildLoaders({isDev}: IBuildOptions): webpack.RuleSetRule[] {
-    return [
-        {
-            test: /\.tsx?$/,
-            use: 'ts-loader',
-            exclude: /node_modules/,
-        },
-        {
-            test: /\.s[ac]ss$/i,
-            use: [
-                isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-                {
-                    loader: 'css-loader',
-                    options: {
-                        modules: {
-                            auto: /\w+\.module\.scss$/,
-                            localIdentName: '[local]--[hash:base64:8]'
-                        },
-                    }
-                },
-                "sass-loader",
-            ],
-        },
+    const tsxLoader = {
+          test: /\.tsx?$/,
+          use: 'ts-loader',
+          exclude: /node_modules/,
+      };
 
+    const styleLoader = {
+        test: /\.s[ac]ss$/i,
+        use: [
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+            {
+                loader: 'css-loader',
+                options: {
+                    modules: {
+                        auto: /\w+\.module\.scss$/,
+                        localIdentName: '[local]--[hash:base64:8]'
+                    },
+                }
+            },
+            "sass-loader",
+        ],
+    };
+
+    const svgLoader = {
+          test: /\.svg$/i,
+          issuer: /\.[jt]sx?$/,
+          use: ['@svgr/webpack'],
+      };
+
+    const fileLoader = {
+          test: /\.(png|jpe?g|gif)$/i,
+          use: [
+              {
+                  loader: 'file-loader',
+              },
+          ],
+      };
+
+    return [
+        fileLoader,
+        svgLoader,
+        tsxLoader,
+        styleLoader
     ];
 }
 
@@ -78,7 +98,7 @@ export function buildConfig(options: IBuildOptions): webpack.Configuration {
 export function buildDevServer(options: IBuildOptions): Configuration {
     return {
         port: options.port,
-        open: true,
+        open: false,
         historyApiFallback: true,
     }
 }

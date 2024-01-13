@@ -10,5 +10,7 @@
 ``npm run start``
 
 ## The project used
-- [Feature Sliced Architecture](https://feature-sliced.design/)
+- [Feature Sliced Design](https://feature-sliced.design/)
 - [Webpack](https://webpack.js.org/)
+- [Typescript](https://www.typescriptlang.org/)
+
