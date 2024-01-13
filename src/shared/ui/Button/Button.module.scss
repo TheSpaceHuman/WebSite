@@ -9,4 +9,16 @@
   &:hover {
     box-shadow: 6px 6px 12px -1px rgba(34, 60, 80, 0.2);
   }
+
+  &.type--icon {
+    border: 0;
+  }
+
+  &.type--primary {
+    border-color: var(--primary-color);
+  }
+
+  &.type--secondary {
+    border-color: var(--secondary-color);
+  }
 }
